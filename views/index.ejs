@@ -1,0 +1,35 @@
+<%- include("partials/top") %>
+
+
+<div class="ui container" id="mtop">
+  <h1>Blogs</h1>
+  
+<% blogs.forEach((blog)=>{ %>
+  <div class="ui main text segment">
+    <h2 class="header tac"> <%= blog.title %> </h2>
+    <div class="ui centered rounded image">
+      <img src="<%= blog.image %>">
+    </div>
+    <p>
+      <%= blog.date.toDateString() %>
+    </p>
+    <div class="description">
+      <p>
+      <%= blog.body.substring(0,100) %>
+      <% if(blog.body.length > 100){ %>
+      . . . .
+        <a id="block" class="fluid ui primary button" href="/blogs/<%= blog._id %>">
+        Read more
+      </a>
+      <% } else{ %>
+      <a id="block" class="ui green button" href="/blogs/<%= blog._id %>">
+        See blog
+      </a>
+      <% } %>
+    </p>
+    </div>
+  </div>
+<% }) %>
+</div>
+
+<%- include("partials/bot") %>

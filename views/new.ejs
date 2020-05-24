@@ -1,0 +1,31 @@
+<%- include("partials/top") %>
+
+<div id="mtop" class="ui main text container segment">
+  <h1 class="ui huge header">Create new blog</h1>
+  
+  <form class="ui form" action="/blogs" method="post">
+    <div class="ui field">
+      <label>Title</label>
+      <input type="text" name="blog[title]" placeholder="Title">
+    </div>
+    
+    <div class="ui field">
+      <label>Image url</label>
+      <input type="text" name="blog[image]" placeholder="Image Url">
+    </div>
+    
+    <div class="ui field">
+      <label>Body</label>
+      <textarea name="blog[body]"></textarea>
+    </div>
+  <input class="ui secondary button" tabindex="0" type="submit" value="Post">
+    </div>
+  
+  
+  
+  
+  </form>
+</div>
+
+
+<%- include("partials/bot") %>
