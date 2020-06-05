@@ -18,4 +18,24 @@
     </div>
   </div>
   
+  <div class="ui comments container segment">
+        <a class="ui black button" href="/blogs/<%= blog._id %>/comments/new">Comment</a>
+    <hr>
+    <% if(blog.comments){ %>
+      <% blog.comments.forEach((comment)=>{ %>
+    <div class="comment">
+      <div class="content">
+        <a class="author"><%= comment.author %></a>
+        <div class="metadata">
+          <span class="date">2 days ago</span>
+        </div>
+      </div>
+      <div class="text">
+        <%= comment.text %>
+      </div>
+    </div>
+      <% }) %>
+    <% } %>
+  </div>
+  
 <%- include("partials/bot") %>
